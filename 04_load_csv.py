@@ -1,3 +1,4 @@
+# load dataset
 from pandas import read_csv
 
 filename = 'daily-total-female-births.csv'
