@@ -9,7 +9,7 @@ series = read_csv(filename, header=0, index_col=0, parse_dates=True, squeeze=Tru
 groups = series.groupby(Grouper(freq='A'))
 years = DataFrame()
 for name, group in groups:
-	years[name.year] = group.values
+    years[name.year] = group.values
 years = years.T
 pyplot.matshow(years, interpolation=None, aspect='auto')
 pyplot.show()
