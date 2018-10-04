@@ -10,15 +10,15 @@ values = DataFrame(series.values)
 lags = 7
 columns = [values]
 for i in range(1, lags + 1):
-	columns.append(values.shift(i))
+    columns.append(values.shift(i))
 dataframe = concat(columns, axis=1)
 columns = ['t']
 for i in range(1, lags + 1):
-	columns.append('t-' + str(i))
+    columns.append('t-' + str(i))
 dataframe.columns = columns
 pyplot.figure(1)
 for i in range(1, lags + 1):
-	ax = pyplot.subplot(240 + i)
-	ax.set_title('t vs t-' + str(i))
-	pyplot.scatter(x=dataframe['t'].values, y=dataframe['t-' + str(i)].values)
+    ax = pyplot.subplot(240 + i)
+    ax.set_title('t vs t-' + str(i))
+    pyplot.scatter(x=dataframe['t'].values, y=dataframe['t-' + str(i)].values)
 pyplot.show()

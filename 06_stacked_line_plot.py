@@ -9,6 +9,6 @@ series = read_csv(filename, header=0, index_col=0, parse_dates=True, squeeze=Tru
 groups = series.groupby(Grouper(freq='A'))
 years = DataFrame()
 for name, group in groups:
-	years[name.year] = group.values
+    years[name.year] = group.values
 years.plot(subplots=True, legend=False)
 pyplot.show()
